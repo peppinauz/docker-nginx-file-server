@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  frontend:
+    image: nginx-browser:latest
+    volumes:
+      - type: bind
+        source: /home/jam/log ## Origen de los datos a servir
+        target: /data
+    working_dir: /data
+    ports:
+      - 18080:80

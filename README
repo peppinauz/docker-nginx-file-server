@@ -1,0 +1,11 @@
+## Build 
+docker build -t nginx-browser .
+## Lanzar el contenedor
+docker run -d -it --name devtest3 -p 18081:80  nginx-browser:latest
+## Lanzar el contenedor montando volumenes
+docker run -it --name dev999 --mount type=bind,source=/home/jam/log,target=/data -p 18082:80  nginx-browser:latest
+## Acceso shell
+docker exec -it devtest3 /bin/bash
+
+## Lanzamos la app=> docker-compose.yml
+docker compose up -d
